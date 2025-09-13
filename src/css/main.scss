@@ -1,51 +1,42 @@
 /* Your SCSS here. */
+// Base styles
+$container-width: 80%;
+$border-radius: 10px;
+$gradient-start: rgb(130, 204, 228);
+$gradient-end: rgb(224, 234, 235);
+
 .profile-image {
-  border-radius: 10px;
   width: 150px;
   height: 150px;
+  border-radius: $border-radius;
 }
 
 .profile-bio-container {
   width: 65%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .container {
-  /* center the container */
-  /* NEVER use flexbox */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+  width: $container-width;
+  margin: 50px auto 0;
+  padding: 20px 20px;
+  border-radius: $border-radius;
   text-align: center;
-  width: 80%;
-  /* nw to se */
-  background: linear-gradient(
-    to bottom right,
-    rgb(130, 204, 228),
-    rgb(224, 234, 235)
-  );
-  padding: 20px;
-  border-radius: 10px;
-  /* padding top and bottom */
-  padding-top: 20px;
-  padding-bottom: 20px;
+
+  // background gradient from NW to SE
+  background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
 }
 
 .bio {
+  margin: 0 5%;
   text-align: left;
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: left;
-  /* move the text slightly right to maintain visual balance*/
-  /* value depend on the width of the text */
-  transform: translateX(calc(3%));
+  transform: translateX(3%); // slight shift for visual balance
 }
 
 .logos {
-  width: auto;
   height: 1em;
+  width: auto;
   vertical-align: middle;
 }
 
