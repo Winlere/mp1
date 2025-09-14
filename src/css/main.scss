@@ -135,10 +135,13 @@ $gradient-background: rgb(130, 204, 228);
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px;
   background-color: $gradient-background;
+  align-items: center;
+  
+  .navbar-item {
+    margin: auto;
+  }
 }
 
 // responsive
