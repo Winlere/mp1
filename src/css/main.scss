@@ -34,8 +34,8 @@ $gradient-background: rgb(130, 204, 228);
   }
   .profile-bio-container {
     width: 50%;
-    height: max(60vh, 800px);
-    margin: 0 0;
+    height: max(100vh, 800px);
+    margin: auto;
     text-align: center;
     .profile-image {
       width: 260px;
@@ -55,7 +55,7 @@ $gradient-background: rgb(130, 204, 228);
 
   .skill-breakdown {
     width: 90%;
-    height: 40vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -70,7 +70,7 @@ $gradient-background: rgb(130, 204, 228);
 
 .education-container {
   width: 90%;
-  height: 40vh;
+  height: 60vh;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -83,7 +83,6 @@ $gradient-background: rgb(130, 204, 228);
     margin: 0;
     font-size: 2em;
   }
-
 
   .education-container-items {
     display: flex;
@@ -129,18 +128,55 @@ $gradient-background: rgb(130, 204, 228);
   }
 }
 
+.footer-container {
+  margin-bottom: 10px;
+  background-color: $gradient-end;
+  width: 100%;
+  text-align: center;
+}
+
 .email {
   font-family: "STIX Two Math", "Cambria Math", "Times New Roman", serif;
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  padding: 10px;
-  background-color: $gradient-background;
+  padding: 20px 10px;
+  background-color: rgba(161, 210, 227, 0.475);
   align-items: center;
-  
-  .navbar-item {
-    margin: auto;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    padding: 10px;
+
+    a {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+
+  a {
+    margin: auto 20px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.4);
+      font-weight: bold;
+    }
   }
 }
 

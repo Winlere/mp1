@@ -10,19 +10,20 @@
 
   <body>
     <div class="navbar">
-      <div class="navbar-item profile">Profile</div>
-      <div class="navbar-item experience">Experience</div>
-      <div class="navbar-item education">Education</div>
+      <a href="#home" class="navbar-item home">Home</a>
+      <a href="#profile" class="navbar-item profile">Profile</a>
+      <a href="#experience" class="navbar-item experience">Experience</a>
+      <a href="#education" class="navbar-item education">Education</a>
     </div>
     <div class="container">
       <!-- use cover image -->
-      <div class="item1-cover-image">
+      <div class="item1-cover-image" id="home">
         <h1>High-Performance Computing Algorithm Formal Methods</h1>
       </div>
 
       <div class="divider"></div>
 
-      <div class="profile-bio-container">
+      <div class="profile-bio-container" id="profile">
         <img class="profile-image" src="assets/me_map_square.jpg" />
         <h1 class="my_name">Lei Huang</h1>
 
@@ -74,7 +75,7 @@
         </p>
       </div>
 
-      <div class="skill-breakdown">
+      <div class="skill-breakdown" id="experience">
         <h1>Experience Breakdown</h1>
         <div class="skill-breakdown-item item1">
             <h2>High-Performance Computing</h2>
@@ -97,7 +98,7 @@
       </div>
 
       
-      <div class="education-container">
+      <div class="education-container" id="education">
         <h1 class="education-header">Education</h1>
         <div class="education-container-items">
             <div class="education-container-item item1">
@@ -117,6 +118,9 @@
         </div>
       </div>
 
+      <div class="footer-container">
+        <p>Copyright © 2025 Lei Huang. All rights reserved.</p>
+      </div>
       <!--- end of container-->
     </div>
   </body>
