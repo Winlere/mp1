@@ -173,7 +173,7 @@ $gradient-background: rgb(130, 204, 228);
 
 .education-container {
   width: 90%;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -230,6 +230,17 @@ $gradient-background: rgb(130, 204, 228);
     }
   }
 }
+
+.fixed-bigdivider {
+  background-image: url(../assets/uiuc_campus.jpg);
+  width: 100%;
+  height: 30vh;
+        background-attachment: fixed;  /* keeps image fixed while scrolling */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
 
 .footer-container {
   margin-bottom: 10px;
