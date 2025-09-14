@@ -16,9 +16,34 @@
       <a href="#education" class="navbar-item education">Education</a>
     </div>
     <div class="container">
-      <!-- use cover image -->
-      <div class="item1-cover-image" id="home">
-        <h1>High-Performance Computing Algorithm Formal Methods</h1>
+      <!-- Carousel cover section -->
+      <div class="cover-carousel" id="home">
+        <div class="carousel-track">
+          <div class="carousel-item active">
+            <div class="carousel-content">
+            </div>
+            <video class="carousel-bg" src="assets/hpc_demo2.mp4" autoplay loop muted></video>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-content">
+            </div>
+            <img class="carousel-bg" src="assets/sorting_quicksort_anim.gif" alt="quick sort demo">
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-content">
+            </div>
+            <video class="carousel-bg" src="assets/fm_demo.mp4" autoplay loop muted></video>
+          </div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Previous slide"><</button>
+        <button class="carousel-btn next" aria-label="Next slide">></button>
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0"></button>
+          <button class="indicator" data-slide="1"></button>
+          <button class="indicator" data-slide="2"></button>
+        </div>
       </div>
 
       <div class="divider"></div>

@@ -79,3 +79,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
   handleScroll();
 });
+
+// Cover Carousel functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".cover-carousel .carousel-track");
+  const items = document.querySelectorAll(".cover-carousel .carousel-item");
+  const prevBtn = document.querySelector(".cover-carousel .prev");
+  const nextBtn = document.querySelector(".cover-carousel .next");
+  const indicators = document.querySelectorAll(".cover-carousel .indicator");
+  
+  let currentIndex = 0;
+  const totalSlides = items.length;
+  
+  function updateCarousel() {
+    // Update track position
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Update active item
+    items.forEach((item, index) => {
+      item.classList.toggle("active", index === currentIndex);
+    });
+    
+    // Update active indicator
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === currentIndex);
+    });
+  }
+  
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }
+  
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+  
+  function goToSlide(slideIndex) {
+    currentIndex = slideIndex;
+    updateCarousel();
+  }
+  
+  // Event listeners
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+  
+  // Indicator click events
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => goToSlide(index));
+  });
+  
+  // Keyboard navigation
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") {
+      prevSlide();
+    } else if (e.key === "ArrowRight") {
+      nextSlide();
+    }
+  });
+  
+  // Auto-play functionality
+  let autoPlayInterval;
+  
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+  }
+  
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+  
+  // Start auto-play
+  startAutoPlay();
+  
+  // Pause auto-play on hover
+  const carousel = document.querySelector(".cover-carousel");
+  carousel.addEventListener("mouseenter", stopAutoPlay);
+  carousel.addEventListener("mouseleave", startAutoPlay);
+  
+  // Initialize carousel
+  updateCarousel();
+});
