@@ -161,3 +161,38 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize carousel
   updateCarousel();
 });
+
+// Profile Photo Modal functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const profilePhoto = document.getElementById("profile-photo");
+  const modal = document.getElementById("profile-modal");
+  const closeBtn = document.querySelector(".modal-close");
+  
+  // Open modal when profile photo is clicked
+  profilePhoto.addEventListener("click", function () {
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  });
+  
+  // Close modal when close button is clicked
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Restore scrolling
+  });
+  
+  // Close modal when clicking outside the image
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.style.display === "block") {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  });
+});
