@@ -1,5 +1,5 @@
 # Responsive design issue for profile image
-_Exported on 9/13/2025 at 21:18:20 CDT from Cursor (1.5.9)_
+_Exported on 9/13/2025 at 21:49:27 CDT from Cursor (1.5.9)_
 
 ---
 
@@ -4967,4 +4967,843 @@ Perfect! I've successfully implemented a modal that opens when clicking on your 
 ✅ **Blur background** - Modern backdrop blur effect  
 
 The modal now provides an elegant way to view your profile photo in full detail. When users click on your profile image, they'll see a beautiful modal overlay with the enlarged photo and multiple ways to close it!
+
+---
+
+**User**
+
+Add Github and LinkedIn icons in social-media-container. The icons should come from FONTAWESOME
+
+---
+
+**Cursor**
+
+I'll help you add FontAwesome icons for GitHub and LinkedIn in the social-media-container. Let me update the HTML and CSS to include the FontAwesome icons.
+
+
+First, let me add the FontAwesome CDN link to the HTML head:
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lei Huang | UIUC</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="#home" class="navbar-item home">Home</a>
+      <a href="#profile" class="navbar-item profile">Profile</a>
+      <a href="#experience" class="navbar-item experience">Experience</a>
+      <a href="#education" class="navbar-item education">Education</a>
+    </div>
+    <div class="container">
+      <!-- Carousel cover section -->
+      <div class="cover-carousel" id="home">
+        <div class="carousel-track">
+          <div class="carousel-item active">
+            <div class="carousel-content">
+            </div>
+            <video class="carousel-bg" src="assets/hpc_demo2.mp4" autoplay loop muted></video>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-content">
+            </div>
+            <img class="carousel-bg" src="assets/sorting_quicksort_anim.gif" alt="quick sort demo">
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-content">
+            </div>
+            <video class="carousel-bg" src="assets/fm_demo.mp4" autoplay loop muted></video>
+          </div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Previous slide"><</button>
+        <button class="carousel-btn next" aria-label="Next slide">></button>
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0"></button>
+          <button class="indicator" data-slide="1"></button>
+          <button class="indicator" data-slide="2"></button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="profile-bio-container" id="profile">
+        <img class="profile-image" src="assets/me_map_square.jpg" id="profile-photo" />
+        
+        <h1 class="my_name">Lei Huang</h1>
+
+        <p class="email">
+          λ<em>domain</em> λ<em>user</em>. <em>user </em>@<em>domain</em>
+          (illinois.edu) (leih5)
+        </p>
+
+        <div class="social-media-container">
+            <a class="github" href="https://github.com/Winlere" target="_blank">GitHub</a>
+            <a class="linkedin" href="https://www.linkedin.com/in/lei-huang-0123456789/" target="_blank">LinkedIn</a>
+        </div>
+
+        <p class="bio">
+          Hi, I am Lei Huang, an MSCS student at
+          <a href="https://illinois.edu/">
+            University of Illinois Urbana-Champaign
+            <img class="logos" src="assets/uiuc.png" alt="UIUC" />
+          </a>
+          advised by
+          <a href="https://huan-zhang.com/"> Prof. Huan Zhang </a>
+          <img class="logos" src="assets/huanzhang.ico" alt="MARIO_LOGO" />.
+          <br />
+          <br />
+
+          I am interested in <strong>Formal Methods</strong>,
+          <strong>Algorithm</strong>, and
+          <strong>High Performance Computing (HPC)</strong>, especially in
+          driving <strong>neural network verification</strong> algorithms with
+          large computation.
+          <br />
+          <br />
+
+          During my undergraduate study, I was fortunate to be advised by
+          <a href="https://zhangyedi.github.io/"> Dr. Yedi Zhang </a>
+          <img class="logos" src="assets/nus.png" alt="NUS" />
+          and
+          <a href="https://songfu1983.github.io/"> Prof. Fu Song </a>
+          <img class="logos" src="assets/cas.png" alt="CAS" />.
+          <br />
+          <br />
+
+          Prior to UIUC, I was a Quant System Engineer at
+          <a href="https://www.sixiecapital.com/en"> Sixie Capital </a>
+          <img class="logos" src="assets/sixie.png" alt="sixie" />. And I served
+          as the leader in the ShanghaiTech
+          <a href="https://acm.shanghaitech.edu.cn/">ACM</a>
+          and
+          <a href="https://hpc.geekpie.club/">GeekPie</a>.
+        </p>
+      </div>
+
+      <div class="skill-breakdown" id="experience">
+        <h1>Experience Breakdown</h1>
+        <div class="skill-breakdown-item item1">
+            <h2>High-Performance Computing</h2>
+            Research Assistant @ UIUC <br>
+            Quant System Engineer @ Sixie Capital Management <br>
+            The 7th Place @ SC'23 Student Cluster Competition <br>
+            The 3rd Place Winner @ ISC'23 Student Cluster Competition <br>
+        </div>
+        <div class="skill-breakdown-item item2">
+            <h2>Algorithm</h2>
+            Silver Medalist @ ICPC Asia-EC Regional Contest 2021,2022 <br>
+            Non-medalist @ NOI 2020 <br>
+            National 5% @ Olympiad in Informatics (CSP-S) 2019 <br>
+        </div>
+        <div class="skill-breakdown-item item3">
+            <h2>Formal Methods</h2>
+            alpha-beta CROWN Team @ UIUC <br>
+            S3L Lab @ ShanghaiTech <br>
+        </div>
+      </div>
+
+      <div class="fixed-bigdivider"></div>
+      <div class="divider"></div>
+      <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="education-container" id="education">
+        <h1 class="education-header">Education</h1>
+        <div class="education-container-items">
+            <div class="education-container-item item1">
+                <div class="education-container-item-image"><img class="logos" src="assets/uiuc.png" alt="UIUC" /> </div>
+                <div class="description">
+                    <h2>University of Illinois Urbana-Champaign</h2>
+                    <p>Master of Science in Computer Science</p>
+                </div>
+            </div>
+            <div class="education-container-item item2">
+                <div class="education-container-item-image"><img class="logos" src="assets/shanghaitech.png" alt="ShanghaiTech" /> </div>
+                <div class="description">
+                    <h2>ShanghaiTech University</h2>
+                    <p>Bachelor of Engineering in Computer Science</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <p>Copyright © 2025 Lei Huang. All rights reserved.</p>
+      </div>
+      <!--- end of container-->
+    </div>
+
+    <!-- Profile Photo Modal -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img class="modal-image" src="assets/me_map.jpg" alt="Lei Huang Profile Photo">
+      </div>
+    </div>
+
+  </body>
+</html>
+
+```
+
+Now let me update the social media links to include FontAwesome icons:
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lei Huang | UIUC</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="#home" class="navbar-item home">Home</a>
+      <a href="#profile" class="navbar-item profile">Profile</a>
+      <a href="#experience" class="navbar-item experience">Experience</a>
+      <a href="#education" class="navbar-item education">Education</a>
+    </div>
+    <div class="container">
+      <!-- Carousel cover section -->
+      <div class="cover-carousel" id="home">
+        <div class="carousel-track">
+          <div class="carousel-item active">
+            <div class="carousel-content">
+            </div>
+            <video class="carousel-bg" src="assets/hpc_demo2.mp4" autoplay loop muted></video>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-content">
+            </div>
+            <img class="carousel-bg" src="assets/sorting_quicksort_anim.gif" alt="quick sort demo">
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-content">
+            </div>
+            <video class="carousel-bg" src="assets/fm_demo.mp4" autoplay loop muted></video>
+          </div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Previous slide"><</button>
+        <button class="carousel-btn next" aria-label="Next slide">></button>
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0"></button>
+          <button class="indicator" data-slide="1"></button>
+          <button class="indicator" data-slide="2"></button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="profile-bio-container" id="profile">
+        <img class="profile-image" src="assets/me_map_square.jpg" id="profile-photo" />
+        
+        <h1 class="my_name">Lei Huang</h1>
+
+        <p class="email">
+          λ<em>domain</em> λ<em>user</em>. <em>user </em>@<em>domain</em>
+          (illinois.edu) (leih5)
+        </p>
+
+         <div class="social-media-container">
+             <a class="github" href="https://github.com/Winlere" target="_blank">
+               <i class="fab fa-github"></i>
+               <span>GitHub</span>
+             </a>
+             <a class="linkedin" href="https://www.linkedin.com/in/lei-huang-0123456789/" target="_blank">
+               <i class="fab fa-linkedin"></i>
+               <span>LinkedIn</span>
+             </a>
+         </div>
+
+        <p class="bio">
+          Hi, I am Lei Huang, an MSCS student at
+          <a href="https://illinois.edu/">
+            University of Illinois Urbana-Champaign
+            <img class="logos" src="assets/uiuc.png" alt="UIUC" />
+          </a>
+          advised by
+          <a href="https://huan-zhang.com/"> Prof. Huan Zhang </a>
+          <img class="logos" src="assets/huanzhang.ico" alt="MARIO_LOGO" />.
+          <br />
+          <br />
+
+          I am interested in <strong>Formal Methods</strong>,
+          <strong>Algorithm</strong>, and
+          <strong>High Performance Computing (HPC)</strong>, especially in
+          driving <strong>neural network verification</strong> algorithms with
+          large computation.
+          <br />
+          <br />
+
+          During my undergraduate study, I was fortunate to be advised by
+          <a href="https://zhangyedi.github.io/"> Dr. Yedi Zhang </a>
+          <img class="logos" src="assets/nus.png" alt="NUS" />
+          and
+          <a href="https://songfu1983.github.io/"> Prof. Fu Song </a>
+          <img class="logos" src="assets/cas.png" alt="CAS" />.
+          <br />
+          <br />
+
+          Prior to UIUC, I was a Quant System Engineer at
+          <a href="https://www.sixiecapital.com/en"> Sixie Capital </a>
+          <img class="logos" src="assets/sixie.png" alt="sixie" />. And I served
+          as the leader in the ShanghaiTech
+          <a href="https://acm.shanghaitech.edu.cn/">ACM</a>
+          and
+          <a href="https://hpc.geekpie.club/">GeekPie</a>.
+        </p>
+      </div>
+
+      <div class="skill-breakdown" id="experience">
+        <h1>Experience Breakdown</h1>
+        <div class="skill-breakdown-item item1">
+            <h2>High-Performance Computing</h2>
+            Research Assistant @ UIUC <br>
+            Quant System Engineer @ Sixie Capital Management <br>
+            The 7th Place @ SC'23 Student Cluster Competition <br>
+            The 3rd Place Winner @ ISC'23 Student Cluster Competition <br>
+        </div>
+        <div class="skill-breakdown-item item2">
+            <h2>Algorithm</h2>
+            Silver Medalist @ ICPC Asia-EC Regional Contest 2021,2022 <br>
+            Non-medalist @ NOI 2020 <br>
+            National 5% @ Olympiad in Informatics (CSP-S) 2019 <br>
+        </div>
+        <div class="skill-breakdown-item item3">
+            <h2>Formal Methods</h2>
+            alpha-beta CROWN Team @ UIUC <br>
+            S3L Lab @ ShanghaiTech <br>
+        </div>
+      </div>
+
+      <div class="fixed-bigdivider"></div>
+      <div class="divider"></div>
+      <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="education-container" id="education">
+        <h1 class="education-header">Education</h1>
+        <div class="education-container-items">
+            <div class="education-container-item item1">
+                <div class="education-container-item-image"><img class="logos" src="assets/uiuc.png" alt="UIUC" /> </div>
+                <div class="description">
+                    <h2>University of Illinois Urbana-Champaign</h2>
+                    <p>Master of Science in Computer Science</p>
+                </div>
+            </div>
+            <div class="education-container-item item2">
+                <div class="education-container-item-image"><img class="logos" src="assets/shanghaitech.png" alt="ShanghaiTech" /> </div>
+                <div class="description">
+                    <h2>ShanghaiTech University</h2>
+                    <p>Bachelor of Engineering in Computer Science</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <p>Copyright © 2025 Lei Huang. All rights reserved.</p>
+      </div>
+      <!--- end of container-->
+    </div>
+
+    <!-- Profile Photo Modal -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img class="modal-image" src="assets/me_map.jpg" alt="Lei Huang Profile Photo">
+      </div>
+    </div>
+
+  </body>
+</html>
+
+```
+
+Now let me add CSS styling for the social media container and icons:
+
+
+```scss
+/* Your SCSS here. */
+// Base styles
+$container-width: 100%;
+$border-radius: 0px;
+$gradient-start: rgb(130, 204, 228);
+$gradient-end: rgb(224, 234, 235);
+$gradient-background: rgb(130, 204, 228);
+
+.container {
+  // use flexbox to align the items vertically
+  // background gradient from NW to SE
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  .divider {
+    margin: 10px 0;
+    width: 100%;
+    height: 0px;
+  }
+
+  .cover-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    // select video
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .carousel-item {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .carousel-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+      }
+      
+      .carousel-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        
+        h1 {
+          font-size: 4em;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+        
+        p {
+          font-size: 1.5em;
+          margin: 0;
+        }
+      }
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      user-select: none;
+      z-index: 10;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      &.prev {
+        left: 20px;
+      }
+      
+      &.next {
+        right: 20px;
+      }
+    }
+    
+    .carousel-indicators {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+      
+      .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &.active {
+          background: rgba(255, 255, 255, 1);
+          transform: scale(1.2);
+        }
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+  .profile-bio-container {
+    width: 50%;
+    height: max(100vh, 800px);
+    margin: auto;
+    text-align: center;
+    .profile-image {
+      width: 260px;
+      height: 260px;
+      border-radius: $border-radius;
+    }
+    .bio {
+      text-align: left;
+      transform: translateX(3%); // slight shift for visual balance
+    }
+    .logos {
+      height: 1em;
+      width: auto;
+      vertical-align: middle;
+    }
+  }
+
+  .skill-breakdown {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: auto;
+
+    .skill-breakdown-item {
+      width: 33.33%;
+      text-align: center;
+    }
+  }
+}
+
+.education-container {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+
+  .education-header {
+    flex-shrink: 0;
+    width: 200px;
+    text-align: left;
+    margin: 0;
+    font-size: 2em;
+  }
+
+  .education-container-items {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-28%);
+    justify-content: center;
+    gap: 30px;
+
+    .education-container-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+
+      .education-container-item-image {
+        flex-shrink: 0;
+
+        .logos {
+          height: 60px;
+          width: auto;
+        }
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        h2 {
+          margin: 0 0 5px 0;
+          font-size: 1.2em;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+.fixed-bigdivider {
+  background-image: url(../assets/uiuc_campus.jpg);
+  width: 100%;
+  height: 30vh;
+        background-attachment: fixed;  /* keeps image fixed while scrolling */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+
+// Profile Photo Modal
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: modalSlideIn 0.3s ease-out;
+    
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2001;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: #ff6b6b;
+        transform: scale(1.1);
+      }
+    }
+    
+    .modal-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+  }
+}
+
+// Modal animation
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+// Social Media Container
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    
+    i {
+      font-size: 1.2em;
+    }
+    
+    span {
+      font-size: 1em;
+    }
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    &.github:hover {
+      color: #333;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    
+    &.linkedin:hover {
+      color: #0077b5;
+      background: rgba(0, 119, 181, 0.1);
+      border-color: #0077b5;
+    }
+  }
+}
+
+// Profile image hover effect
+.profile-image {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.footer-container {
+  margin-bottom: 10px;
+  background-color: $gradient-end;
+  width: 100%;
+  text-align: center;
+}
+
+.email {
+  font-family: "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  padding: 20px 10px;
+  background-color: rgba(161, 210, 227, 0.475);
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    padding: 10px;
+
+    a {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+
+  a {
+    margin: auto 20px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.4);
+      font-weight: bold;
+    }
+  }
+}
+
+// responsive
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .container .profile-bio-container .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+// set background color for the body
+body {
+  background-color: $gradient-background;
+  margin: 0;
+}
+
+```
+
+Perfect! I've successfully added FontAwesome icons for GitHub and LinkedIn in your social media container. Here's what I've implemented:
+
+## �� Social Media Icons with FontAwesome:
+
+### HTML Updates:
+- **FontAwesome CDN** - Added the latest FontAwesome 6.4.0 CDN link to the HTML head
+- **Icon integration** - Added FontAwesome icons (`fab fa-github` and `fab fa-linkedin`) to each social link
+- **Text labels** - Kept the text labels alongside the icons for better accessibility
+
+### CSS Styling:
+- **Flexbox layout** - Social media container uses flexbox for proper alignment
+- **Icon and text pairing** - Icons and text are aligned side by side with proper spacing
+- **Modern button design** - Rounded buttons with subtle backgrounds and borders
+- **Hover effects** - Different hover styles for each platform:
+  - **GitHub**: White background with dark text
+  - **LinkedIn**: LinkedIn blue color scheme
+- **Smooth transitions** - All interactions have smooth 0.3s transitions
+- **Lift effect** - Buttons lift up slightly on hover with shadow
+
+## �� Key Features:
+
+✅ **FontAwesome icons** - Professional GitHub and LinkedIn icons  
+✅ **Responsive design** - Works on all screen sizes  
+✅ **Hover animations** - Smooth transitions and visual feedback  
+✅ **Platform-specific styling** - Different colors for GitHub and LinkedIn  
+✅ **Accessibility** - Icons paired with text labels  
+✅ **Modern design** - Rounded buttons with subtle backgrounds  
+✅ **Consistent spacing** - Proper gaps and padding throughout  
+
+The social media container now displays beautiful FontAwesome icons alongside the text labels, with platform-specific hover effects that match each service's branding. The icons are properly sized and aligned, creating a professional and modern look for your social media links!
 
